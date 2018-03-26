@@ -14,8 +14,8 @@ PROMPT_COMMAND="echo \"${USRNAME}\" >> $CMDHISTFILE;history 1 >> $CMDHISTFILE;$P
 
 # fix path issues since upgrade from 5.2 to 5.3
 # /usr/kerberos/sbin:/usr/kerberos/bin:/usr/bin:/bin
-PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:/usr/local/bin
-export PATH
-myip=$(/sbin/ifconfig eth3 | egrep 'inet '|awk '{print $2}'|awk -F: '{print $2}'|head -1)
+# PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:/usr/local/bin
+# export PATH
+myip=$(ifconfig | egrep -m 1 'inet '|awk '{print $2}'|awk -F: '{print $2}'|head -1)
 PS1='\n[\d \t - $(tty)]\n[\u@\[\033[01;31m\]\h-$(echo ${myip})\[\033[00m\]: \w ]\n\$ '
 
