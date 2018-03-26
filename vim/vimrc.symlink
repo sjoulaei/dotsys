@@ -5,6 +5,6 @@ filetype plugin on " load the plugins for specific file types
 filetype indent on " automatically indent code
 
 " syntax highlighting
-colorscheme murphy " set color scheme, must be installed first
+colorscheme distinguished " set color scheme, must be installed first
 set background=dark " dark background for console
 syntax on " enable syntax highlighting
